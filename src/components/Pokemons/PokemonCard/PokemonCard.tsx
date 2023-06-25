@@ -1,24 +1,40 @@
-import attackIcon from "../../../assets/attack.png"
-import defenseIcon from "../../../assets/defense.png"
-import heartIcon from "../../../assets/heart.png"
-import bootsIcon from "../../../assets/boots.png"
+import { attackIcon, defenseIcon, heartIcon, bootsIcon } from "../../../utils/icons";
 import PokemonCardAvatar from "../PokemonCard/PokemonCardAvatar/PokemonCardAvatar";
+import PokemonCardAbilities from "./PokemonCardAbilities/PokemonCardAbilities";
 
-type Sprites = {
-  sprites: { front_default: string };
-  abilities: { ability: {name:string} };
+type Ability = {
+  ability: { name: string };
+};
+
+type Stat = {
+  base_stat: number,
+  stat: {
+    name: 'hp' | 'attack' | 'defense' | 'speed'
+  }
 }
-type PokemonColor = {
+
+type DataTypes = {
+  sprites: { front_default: string };
+  abilities: Ability[];
+  stats: Stat[]
+}
+
+type Language = {
+  flavor_text: string
+  language: {
+    name: string
+  }
+}
+
+type DataSpecieTypes = {
+  flavor_text_entries: Language[];
   color: { name: string };
 }
-/* type PokemonAbilities = {
-  ability: { name: string };
-} */
 
 interface Props {
   name: string;
-  data: Sprites;
-  dataSpecie: PokemonColor;
+  data: DataTypes;
+  dataSpecie: DataSpecieTypes;
   handlePokemonDialog: () => void;
 }
 
@@ -35,17 +51,17 @@ const getSkill = ({ icon, findSkill }: { icon: string, findSkill: React.JSX.Elem
   )
 }
 
-const findSkill = ({ data, skill }: { data: Sprites, skill: string }): React.JSX.Element => {
-  const find = data.stats.find((stat: string) => stat.stat.name === skill);
+const findSkill = ({ data, skill }: { data: DataTypes, skill: string }): React.JSX.Element => {
+  const find = data.stats.find(({ stat }: Stat) => stat.name === skill);
   const findStat = find ? find.base_stat : null;
   return <span className="font-medium text-sm">{findStat}</span>
 }
 
-const findLanguage = ({ dataSpecie, lan }: { dataSpecie: PokemonColor, lan: string }): React.JSX.Element => {
-  const englishEntry = dataSpecie.flavor_text_entries.find(
-    (entry: string) => entry.language.name === lan
-  );
-  return <span className="font-medium lowercase text-sm">{englishEntry.flavor_text}</span>
+const findLanguage = ({ dataSpecie, lan }: { dataSpecie: DataSpecieTypes, lan: string }): React.JSX.Element => {
+  const englishEntry = dataSpecie.flavor_text_entries.find( ({language} : Language ) => language.name === lan);
+  console.log(englishEntry)
+  const findLan = englishEntry ? englishEntry.flavor_text : null;
+  return <span className="font-medium lowercase text-sm">{findLan}</span>
 }
 
 const PokemonCard: React.FC<Props> = ({ name, data, dataSpecie, handlePokemonDialog }) => {
@@ -63,7 +79,6 @@ const PokemonCard: React.FC<Props> = ({ name, data, dataSpecie, handlePokemonDia
         color={dataSpecie.color.name}
       />
 
-
       <div className="text-center">
         <h1 className="text-xl first-letter:uppercase mb-4">{name}</h1>
         <div className="flex gap-2 mb-2">
@@ -78,20 +93,7 @@ const PokemonCard: React.FC<Props> = ({ name, data, dataSpecie, handlePokemonDia
           </div>
         </div>
 
-        <div className="flex gap-2 items-center mb-2">
-          <div className="w-1/2 flex flex-col gap-2">
-            <div className="rounded-full bg-zinc-800 py-1">abilities:</div>
-          </div>
-          <div className="w-1/2 flex flex-col gap-2">
-            {
-              data.abilities.map((skill: string) =>
-              (
-                <div key={skill.ability.name} className="rounded-full bg-zinc-900 py-1 font-medium text-xs">{skill.ability.name}</div>
-              )
-              )
-            }
-          </div>
-        </div>
+        <PokemonCardAbilities abilities={data.abilities} />
 
         {findLanguage({ dataSpecie, lan: "en" })}
       </div>
