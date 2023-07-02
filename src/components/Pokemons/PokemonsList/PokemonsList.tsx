@@ -1,9 +1,9 @@
-import PokemonItem from "../PokemonItem/PokemonItem";
+import PokemonItem from "../PokemonItem";
 import { Pokemons } from "../Pokemons.Types";
 
-type Props = {
+interface Props {
   data: Pokemons;
-};
+}
 
 const PokemonsList: React.FC<Props> = ({data}) => {
   return (

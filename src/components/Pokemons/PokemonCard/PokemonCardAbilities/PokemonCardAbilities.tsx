@@ -1,6 +1,4 @@
-type Ability = {
-  ability: { name: string };
-};
+import { Ability } from "../PokemonCard.Types";
 
 interface Props {
   abilities: Ability[];

@@ -1,42 +1,14 @@
 import { attackIcon, defenseIcon, heartIcon, bootsIcon } from "../../../utils/icons";
-import PokemonCardAvatar from "../PokemonCard/PokemonCardAvatar/PokemonCardAvatar";
-import PokemonCardAbilities from "./PokemonCardAbilities/PokemonCardAbilities";
-
-type Ability = {
-  ability: { name: string };
-};
-
-type Stat = {
-  base_stat: number,
-  stat: {
-    name: 'hp' | 'attack' | 'defense' | 'speed'
-  }
-}
-
-type DataTypes = {
-  sprites: { front_default: string };
-  abilities: Ability[];
-  stats: Stat[]
-}
-
-type Language = {
-  flavor_text: string
-  language: {
-    name: string
-  }
-}
-
-type DataSpecieTypes = {
-  flavor_text_entries: Language[];
-  color: { name: string };
-}
-
+import PokemonCardAvatar from "../PokemonCard/PokemonCardAvatar";
+import PokemonCardAbilities from "./PokemonCardAbilities";
+import { DataTypes, DataSpecieTypes, Stat, Language } from "./PokemonCard.Types";
 interface Props {
+  data: DataTypes
+  dataSpecie: DataSpecieTypes
   name: string;
-  data: DataTypes;
-  dataSpecie: DataSpecieTypes;
   handlePokemonDialog: () => void;
 }
+
 
 const getSkill = ({ icon, findSkill }: { icon: string, findSkill: React.JSX.Element }) => {
   return (
@@ -58,7 +30,7 @@ const findSkill = ({ data, skill }: { data: DataTypes, skill: string }): React.J
 }
 
 const findLanguage = ({ dataSpecie, lan }: { dataSpecie: DataSpecieTypes, lan: string }): React.JSX.Element => {
-  const englishEntry = dataSpecie.flavor_text_entries.find( ({language} : Language ) => language.name === lan);
+  const englishEntry = dataSpecie.flavor_text_entries.find(({ language }: Language) => language.name === lan);
   console.log(englishEntry)
   const findLan = englishEntry ? englishEntry.flavor_text : null;
   return <span className="font-medium lowercase text-sm">{findLan}</span>
