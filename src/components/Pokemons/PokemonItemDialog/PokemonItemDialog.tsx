@@ -1,9 +1,9 @@
 import useApiCall from "../../../hooks/useApiCall"
 import Spinner from "../../core/Spinner/Spinner";
-import { Pokemon } from "../Pokemons.Types";
+import { PokemonPreview } from "../PokemonsPreview.Types";
 import PokemonCard from "../PokemonCard";
 
-interface Props extends Pokemon {
+interface Props extends PokemonPreview {
   handlePokemonDialog: () => void;
 }
 

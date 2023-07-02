@@ -1,8 +1,8 @@
 import PokemonItem from "../PokemonItem";
-import { Pokemons } from "../Pokemons.Types";
+import { PokemonsPreview } from "../PokemonsPreview.Types";
 
 interface Props {
-  data: Pokemons;
+  data: PokemonsPreview;
 }
 
 const PokemonsList: React.FC<Props> = ({data}) => {

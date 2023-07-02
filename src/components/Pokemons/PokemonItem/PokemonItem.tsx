@@ -1,9 +1,9 @@
 import {  useState } from 'react'
 
-import { Pokemon } from "../Pokemons.Types";
+import { PokemonPreview } from "../PokemonsPreview.Types";
 import PokemonItemDialog from "../PokemonItemDialog";
 
-const PokemonItem: React.FC<Pokemon> = ({name, url}) => {
+const PokemonItem: React.FC<PokemonPreview> = ({name, url}) => {
   const [showDialog, setShowDialog] = useState(false);
 
   const handlePokemonDialog = () => {

@@ -3,7 +3,7 @@ import PokemonsList from './PokemonsList';
 import Spinner from '../core/Spinner/Spinner';
 
 const CallPokemons = () => {
-  const { data, error } = useApiCall({url: 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0'});
+  const { data, error } = useApiCall({url: 'https://pokeapi.co/api/v2/pokemon?limit=2&offset=0'});
 
   if (error) {
     return <div>Error: {error}</div>;
