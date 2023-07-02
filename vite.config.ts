@@ -7,7 +7,7 @@ export default defineConfig(() => {
   const config = {
     plugins: [react()],
     /* base: '/<REPO>/', */
-    base: '/pokedex/',
+    base: '/PokeDex/',
   }
   return config
 })
