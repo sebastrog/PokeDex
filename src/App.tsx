@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 import Pokemons from "./components/Pokemons"
 import Search from "./components/Search/Search"
-import { Pokemon } from './components/Pokemons/PokemonsPreview.Types';
 
 function App() {
   const [pokemonList, setPokemonList] = useState(null);

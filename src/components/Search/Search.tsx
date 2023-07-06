@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import PikachuLoading from '../../../public/loading-pikachu.gif';
+import PikachuLoading from '../../assets/loading-pikachu.gif';
 import { Pokemon } from '../Pokemons/PokemonsPreview.Types';
 
 type Props = {
