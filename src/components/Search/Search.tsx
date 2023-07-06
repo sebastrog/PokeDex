@@ -4,7 +4,6 @@ import PikachuLoading from '../../assets/loading-pikachu.gif';
 import { Pokemon } from '../Pokemons/PokemonsPreview.Types';
 
 type Props = {
-  url: string;
   setPokemonList: (data: Pokemon[]) => void;
 };
 
