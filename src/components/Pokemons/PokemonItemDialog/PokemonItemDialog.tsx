@@ -1,11 +1,8 @@
-import Spinner from "../../core/Spinner/Spinner";
-import { Pokemon, PokemonPreview } from "../PokemonsPreview.Types";
 import PokemonCard from "../PokemonCard";
-import { DataTypes, DataSpecieTypes, Stat, Language } from "../../Pokemons/PokemonCard/PokemonCard.Types";
 
 interface Props {
-  data: DataTypes
-  dataSpecie: DataSpecieTypes
+  data: any
+  dataSpecie:any
   handlePokemonDialog: () => void;
 }
 
