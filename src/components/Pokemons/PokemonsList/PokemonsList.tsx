@@ -1,20 +1,20 @@
 import PokemonItem from "../PokemonItem";
-import { PokemonsPreview } from "../PokemonsPreview.Types";
+import { PokemonPreview } from "../PokemonsPreview.Types";
 
 interface Props {
-  data: PokemonsPreview;
+  data: [];
 }
 
 const PokemonsList: React.FC<Props> = ({data}) => {
   return (
     <div className="container">
       <div className="px-5">
-        <div className="flex flex-wrap gap-5">
-          {data?.results.map(pokemon => (
+        <div className="flex flex-wrap justify-center gap-5">
+          {data?.map( ( PokemonPreview : PokemonPreview) => (
             <PokemonItem 
-              key={pokemon.name} 
-              name={pokemon.name} 
-              url={pokemon.url} 
+              key={PokemonPreview.name} 
+              PokemonPreview={PokemonPreview}
+              id={PokemonPreview.id}
             />
           ))}
         </div>

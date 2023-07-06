@@ -25,6 +25,10 @@ export type DataTypes = {
 export type DataSpecieTypes = {
   flavor_text_entries: Language[];
   color: { name: string };
+
+  sprites: { front_default: string };
+  abilities: Ability[];
+  stats: Stat[]
 }
 
 export type PokeCard = {

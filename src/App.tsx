@@ -1,10 +1,23 @@
+import { useState } from 'react'
+
 import Pokemons from "./components/Pokemons"
+import Search from "./components/Search/Search"
+import { Pokemon } from './components/Pokemons/PokemonsPreview.Types';
 
 function App() {
+  const [pokemonList, setPokemonList] = useState(null);
   return (
     <div className="bg-zinc-900 grid place-content-center min-h-screen text-white">
-      <h1 className="mb-5 italic text-amber-600 text-xl px-5 text-center">Hi master pokemon!</h1>
-      <Pokemons />
+      <h1 className="mb-2 italic text-amber-600 text-xl px-5 text-center">Hi master pokemon!</h1>
+      <div className="mb-4 w-48 m-auto">
+        <Search setPokemonList={setPokemonList}/>
+      </div>
+
+      {
+        pokemonList && (
+          <Pokemons pokemonList={pokemonList} />
+        )
+      }
     </div>
   )
 }

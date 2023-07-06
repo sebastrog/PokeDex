@@ -31,12 +31,12 @@ const findSkill = ({ data, skill }: { data: DataTypes, skill: string }): React.J
 
 const findLanguage = ({ dataSpecie, lan }: { dataSpecie: DataSpecieTypes, lan: string }): React.JSX.Element => {
   const englishEntry = dataSpecie.flavor_text_entries.find(({ language }: Language) => language.name === lan);
-  console.log(englishEntry)
   const findLan = englishEntry ? englishEntry.flavor_text : null;
   return <span className="font-medium lowercase text-sm">{findLan}</span>
 }
 
 const PokemonCard: React.FC<Props> = ({ name, data, dataSpecie, handlePokemonDialog }) => {
+  console.log('dataSpecie', dataSpecie)
   return (
     <div className="rounded-xl bg-zinc-900 max-w-[380px] px-4 py-10 relative border-2" style={{ borderColor: dataSpecie.color.name }}>
       <button
@@ -47,7 +47,7 @@ const PokemonCard: React.FC<Props> = ({ name, data, dataSpecie, handlePokemonDia
 
       <PokemonCardAvatar
         name={name}
-        sprites={data.sprites.front_default}
+        sprites={data.sprites?.front_default}
         color={dataSpecie.color.name}
       />
 

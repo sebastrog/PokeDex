@@ -1,0 +1,15 @@
+// vite.config.ts
+import { defineConfig } from "file:///D:/react/card-collection/node_modules/vite/dist/node/index.js";
+import react from "file:///D:/react/card-collection/node_modules/@vitejs/plugin-react/dist/index.mjs";
+var vite_config_default = defineConfig(() => {
+  const config = {
+    plugins: [react()],
+    /* base: '/<REPO>/', */
+    base: "/PokeDex/"
+  };
+  return config;
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJEOlxcXFxyZWFjdFxcXFxjYXJkLWNvbGxlY3Rpb25cIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIkQ6XFxcXHJlYWN0XFxcXGNhcmQtY29sbGVjdGlvblxcXFx2aXRlLmNvbmZpZy50c1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vRDovcmVhY3QvY2FyZC1jb2xsZWN0aW9uL3ZpdGUuY29uZmlnLnRzXCI7aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAndml0ZSdcbmltcG9ydCByZWFjdCBmcm9tICdAdml0ZWpzL3BsdWdpbi1yZWFjdCdcblxuLy8gaHR0cHM6Ly92aXRlanMuZGV2L2NvbmZpZy9cbi8vIGh0dHBzOi8vdml0ZWpzLmRldi9jb25maWcvXG5leHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoKCkgPT4ge1xuICBjb25zdCBjb25maWcgPSB7XG4gICAgcGx1Z2luczogW3JlYWN0KCldLFxuICAgIC8qIGJhc2U6ICcvPFJFUE8+LycsICovXG4gICAgYmFzZTogJy9Qb2tlRGV4LycsXG4gIH1cbiAgcmV0dXJuIGNvbmZpZ1xufSlcbiJdLAogICJtYXBwaW5ncyI6ICI7QUFBZ1EsU0FBUyxvQkFBb0I7QUFDN1IsT0FBTyxXQUFXO0FBSWxCLElBQU8sc0JBQVEsYUFBYSxNQUFNO0FBQ2hDLFFBQU0sU0FBUztBQUFBLElBQ2IsU0FBUyxDQUFDLE1BQU0sQ0FBQztBQUFBO0FBQUEsSUFFakIsTUFBTTtBQUFBLEVBQ1I7QUFDQSxTQUFPO0FBQ1QsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
