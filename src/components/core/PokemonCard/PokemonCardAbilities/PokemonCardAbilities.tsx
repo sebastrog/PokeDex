@@ -1,7 +1,9 @@
-import { Ability } from "../PokemonCard.Types";
+type Ability = {
+  ability: string
+};
 
 interface Props {
-  abilities: Ability[];
+  abilities: Ability[]
 }
 
 const PokemonCardAbilities: React.FC<Props> = ({ abilities }) => {
@@ -11,7 +13,10 @@ const PokemonCardAbilities: React.FC<Props> = ({ abilities }) => {
         <div className="rounded-full bg-zinc-800 py-1">abilities:</div>
       </div>
       <div className="w-1/2 flex flex-col gap-2">
-        {abilities.map((ability) => (<div key={ability.ability.name} className="rounded-full bg-zinc-900 py-1 font-medium text-xs">{ability.ability.name}</div>))}
+        {abilities.map(ability => (
+          //search why i need to convert tostring ability returned at the array
+          <div key={`ability-${ability}`} className="rounded-full bg-zinc-900 py-1 font-medium text-xs">{ability.toString()}</div>
+        ))}
       </div>
     </div>
   )

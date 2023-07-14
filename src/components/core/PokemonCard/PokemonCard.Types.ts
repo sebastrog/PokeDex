@@ -1,4 +1,4 @@
-export type Ability = {
+/* export type Ability = {
   ability: { name: string };
 };
 
@@ -34,4 +34,38 @@ export type DataSpecieTypes = {
 export type PokeCard = {
   DataSpecieTypes: DataSpecieTypes
   DataTypes: DataTypes
+}
+
+ */
+
+export type Stat = {
+  base_stat: number,
+  stat: {
+    name: 'hp' | 'attack' | 'defense' | 'speed'
+  }
+}
+
+export type Languages = {
+  flavor_text: string
+  language: {
+    name: string
+  }
+}
+
+export type Sprites = {
+  front_default: string
+}
+
+export type Ability = {
+  ability: { name: string };
+};
+
+export type Pokemon = {
+  name: string,
+  id: number,
+  abilities: []
+  stats: []
+  sprites: string
+  color: string
+  language?: string | null
 }
