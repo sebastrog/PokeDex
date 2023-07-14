@@ -4,6 +4,10 @@ import Search from "./components/Search"
 import PokemonCard from './components/core/PokemonCard';
 import { Pokemon } from './components/core/PokemonCard/PokemonCard.Types';
 
+import LogoVite from './assets/logo-vite.svg'
+import LogoTypeScript from './assets/logo-typescript.svg'
+import LogoTailwind from './assets/logo-tailwind.svg'
+
 function App() {
   const [pokemonFound, setPokemonFound] = useState<Pokemon[]>([]);
 
@@ -30,6 +34,12 @@ function App() {
             />
           </div>
         ))}
+      </div>
+
+      <div className="fixed bottom-0 right-0 flex gap-5 bg-zinc-900 px-2 py-2 rounded-l-lg">
+        <img className="w-[30px]" src={LogoVite} alt="logo vite" />
+        <img className="w-[30px]" src={LogoTypeScript} alt="logo typescript" />
+        <img className="w-[30px]" src={LogoTailwind} alt="logo tailwind" />
       </div>
     </div>
   )
