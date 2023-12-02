@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="bg-zinc-900 min-h-screen text-white p-5">
       <div className="text-center mb-3">
-        <h1 className="mb-1 italic text-amber-400 text-xl px-5 text-center">find a pokemon!</h1>
+        <h1 className="mb-1 italic text-amber-400 text-xl px-5 text-center">find a pokemon! - <a href="https://github.com/sebastrog/PokeDex" target="_blank">Repository</a> </h1>
       </div>
 
       <div className="mb-10 w-48 m-auto">
